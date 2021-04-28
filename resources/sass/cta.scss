@@ -1,0 +1,94 @@
+@import 'utilities';
+/*_   _   _
+ / \ / \ / \
+( B | E | M )
+ \_/ \_/ \_/
+ - Blocks................block properties only.
+ - Elems................elements' Block.
+ - Modifiers............modify the aspect of Element.
+ - States...............hover, focus, active or class for temporary state.
+*/
+.cta {
+  /*------------------------------------*\
+  #BLOCK
+\*------------------------------------*/
+  border: 1px solid color($qfq, third);
+  display: inline-block;
+  padding: 10px;
+  color: color($qfq, third);
+  text-decoration: none;
+  margin: 15px;
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+  @include theme(colnum) {
+    color: white;
+    border-color: white;
+  }
+  /*------------------------------------*\
+  #ELEMENTS
+\*------------------------------------*/
+
+  /*------------------------------------*\
+  #MODIFIERS
+\*------------------------------------*/
+  &--reverse {
+    background-color: color($qfq, third);
+    border-color: white;
+    color: white;
+    @include theme(colnum) {
+      background-color: color($colnum, third);
+    }
+  }
+  &--is-centered {
+  }
+  &--is-arrow-down {
+    padding-right: 25px;
+    &:after {
+      border: 4px solid transparent;
+      border-top: 5px solid color($qfq, third);
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: 55%;
+      transform: translateY(-50%);
+      transition: all 0.1s linear;
+      width: 0;
+      @include theme(colnum) {
+        border-top-color: white;
+      }
+    }
+  }
+  &--is-arrow-right {
+    padding-right: 25px;
+    &:after {
+      border: 4px solid transparent;
+      border-left: 5px solid color($qfq, third);
+      content: "";
+      display: block;
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: 51%;
+      transform: translateY(-50%);
+      transition: all 0.1s linear;
+      width: 0;
+      @include theme(colnum) {
+        border-left-color: white;
+      }
+    }
+  }
+  &--primary {
+    @extend .cta;
+    @include theme(colnum) {
+      color: white;
+      border-color: #222;
+      background-color: #222;
+    }
+  }
+  /*------------------------------------*\
+  #STATES
+\*------------------------------------*/
+}

@@ -1,0 +1,298 @@
+/*_   _   _
+ / \ / \ / \
+( B | E | M )
+ \_/ \_/ \_/
+ - Blocks................block properties only.
+ - Elems................elements' Block.
+ - Modifiers............modify the aspect of Element.
+ - States...............hover, focus, active or class for temporary state.
+*/
+.single {
+/*------------------------------------*\
+  #BLOCK
+\*------------------------------------*/
+
+/*------------------------------------*\
+  #ELEMENTS
+\*------------------------------------*/
+  &__carousel {
+    min-width: 100%;
+    background-color: #eee;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+    position:relative;
+    @include theme(colnum) {
+      background-color: rgba( 0,0,0, .8);
+    }
+  }
+  &__carousel-item {
+    position: relative;
+    display: inline-block;
+    margin: 2.5px;
+    display: inline-block;
+    height: 100%;
+  }
+  &__carousel-item-image {
+    height: 300px;
+    width: auto;
+    display: inline-block;
+    @include tablet {
+      height: 237px;
+    }
+  }
+  &__carousel-item-legend {
+    position: absolute;
+    bottom: 4%;
+    right: 0;
+    font-size: 12px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+  }
+  &__subheader-wrapper {
+    padding-bottom: 25px;
+  }
+  &__advertisment-wrapper {
+    position: relative;
+    img {
+      max-width: 100%;
+    }
+  }
+  &__breadcrumb {
+    margin-bottom: 30px;
+    color: #999;
+  }
+  &__breadcrumb-entry {
+    color: #999;
+    text-decoration: none;
+  }
+  &__title {
+    font-size: 40px;
+    color: color($qfq, third);
+    margin-bottom: 30px;
+    @include theme(colnum) {
+      color: white;
+      @include header-font;
+      text-transform: none;
+    }
+  }
+  &__role {
+    font-size: 17px;
+    color: #999;
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+  &__role-legend {
+  }
+  &__role-name {
+    color: color($qfq, third);
+    text-decoration: none;
+    @include theme(colnum) {
+      color: white;
+    }
+  }
+  &__metas-wrapper {
+    margin-top: 20px;
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+  &__meta {
+    margin-right: 20px;
+    color: color($qfq, default);
+    @include theme(colnum) {
+      color: white;
+    }
+    .fa {
+      color: color($qfq, third);
+      margin-right: 5px;
+      @include theme(colnum) {
+        color: white;
+      }
+    }
+  }
+  &__status {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  &__status-step {
+    border: 1px solid #ccc;
+    border-right-width: 0;
+    padding: 10px;
+    width: 25%;
+    text-align: center;
+    color: #999;
+  }
+  &__complementary-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+
+    @include theme(colnum) {
+      background-color: color($colnum, third);
+    }
+  }
+  &__complementary-block {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 25px;
+    margin-bottom: 40px;
+    & > p:not([class]) {
+      color: #333;
+      a:not([class]) {
+        &, &:active {
+          color: color($colnum, blue);
+          font-weight: bold;
+        }
+        &:hover, &:visited:hover {
+          color: color($colnum, blue-hue);
+        }
+        &:visited {
+          color: color($colnum, blue-faded);
+        }
+      }
+    }
+  }
+
+  &__complementary-block-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    > .fa {
+      color: color($qfq, third);
+      margin-right: 10px;
+      @include theme(colnum) {
+        color: color($colnum, third);
+      }
+    }
+  }
+  &__complementary-block-link {
+    font-weight: bold;
+    &, &:active {
+      color: color($colnum, blue);
+    }
+    &:hover, &:visited:hover {
+      color: color($colnum, blue-hue);
+    }
+    &:visited {
+      color: color($colnum, blue-faded);
+    }
+  }
+  &__complementary-block-link--article {
+    display: inline-block;
+    padding-left: $gutter-width/2;
+    text-decoration:none;
+    font-weight: normal;
+    margin-bottom: 1em;
+    &::last-child {
+      margin-bottom: 0;
+    }
+    @include theme(colnum){
+      border-left: color($colnum, blue) solid 2px;
+    }
+    &, &:active {
+      text-decoration:none;
+      @include theme(colnum) {
+        color: color($colnum, text-gray);
+      }
+    }
+    &:hover, &:visited:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      @include theme(colnum) {
+        color: color($colnum, text-gray);
+      }
+    }
+    &:visited {
+      @include theme(colnum) {
+        color: color($colnum, text-gray-faded);
+      }
+    }
+  }
+
+  &__complementary-block-content {
+    line-height: 1.45;
+    hr {
+      background-color: transparent;
+      border: 0;
+      margin-bottom: 2.5px;
+    }
+  }
+  &__complementary-block-content-layout {
+    display: flex;
+    align-items: flex-start;
+    >.fa, >.fab {
+      text-align: center;
+      margin-right: 5px;
+      margin-top: 5px;
+      width: 18px;
+      font-size: 14px;
+    }
+    @include theme(colnum) {
+      a:not([class]) {
+        &, &:active {
+          color: color($colnum, blue);
+          font-weight: bold;
+        }
+        &:hover, &:visited:hover {
+          color: color($colnum, blue-hue);
+        }
+        &:visited {
+          color: color($colnum, blue-faded);
+        }
+      }
+    }
+  }
+  &__complementary-block__list {
+    text-align: left;
+  }
+  &__complementary-block__list-item {
+    margin: 15px 0;
+  }
+  &__complementary-block__list-link {
+    text-decoration: none;
+    display: inline-block;
+    color: #333;
+    padding-left: 10px;
+    line-height: 1.2;
+    border-left: 2px solid color($qfq, third);
+    @include theme(colnum) {
+      border-color: color($colnum, third);
+    }
+  }
+  &__complementary-sidebar-wrapper {
+    overflow: hidden;
+    position: relative;
+    img {
+      max-width: 100%;
+    }
+  }
+/*------------------------------------*\
+  #MODIFIERS
+\*------------------------------------*/
+  &__status-step--is-active {
+    background-color: color($qfq, third);
+    color: white;
+    @include theme(colnum) {
+      background-color: color($colnum, third);
+    }
+  }
+  &__status-step:last-child {
+    border-right-width: 1px;
+  }
+/*------------------------------------*\
+  #STATES
+\*------------------------------------*/
+  &__breadcrumb-entry:hover {
+    color: color($qfq, third);
+  }
+}

@@ -1,0 +1,40 @@
+/*_   _   _
+ / \ / \ / \
+( B | E | M )
+ \_/ \_/ \_/
+ - Blocks................block properties only.
+ - Elems................elements' Block.
+ - Modifiers............modify the aspect of Element.
+ - States...............hover, focus, active or class for temporary state.
+*/
+.explore
+{
+/*------------------------------------*\
+  #BLOCK
+\*------------------------------------*/
+  padding: 2em 0 0 0;
+  border: none;
+  height: auto;
+  @include mobile {
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+      display: block;
+  }
+/*------------------------------------*\
+  #ELEMENTS
+\*------------------------------------*/
+  &__row {
+    height: auto;
+
+  }
+/*------------------------------------*\
+  #MODIFIERS
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+  #STATES
+\*------------------------------------*/
+
+}

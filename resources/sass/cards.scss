@@ -1,0 +1,54 @@
+/*_   _   _
+ / \ / \ / \
+( B | E | M )
+ \_/ \_/ \_/
+ - Blocks................block properties only.
+ - Elems................elements' Block.
+ - Modifiers............modify the aspect of Element.
+ - States...............hover, focus, active or class for temporary state.
+*/
+.cards {
+/*------------------------------------*\
+  #BLOCK
+\*------------------------------------*/
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+/*------------------------------------*\
+  #ELEMENTS
+\*------------------------------------*/
+  &__item {
+    display: flex;
+    z-index: 1;
+    transition: transform .2s 0s;
+  }
+/*------------------------------------*\
+  #MODIFIERS
+\*------------------------------------*/
+  &--featured {
+    margin: 0;
+    background-color: #000;
+    .row {
+      justify-content: center;
+      // flex-wrap: nowrap;
+    }
+  }
+  // &__row--featured {
+  //   justify-content: center;
+  //   flex-wrap: nowrap;
+  // }
+  // &__item--featured {
+  //   display: flex;
+  //   flex: 0 1 20%;
+  // }
+/*------------------------------------*\
+  #STATES
+\*------------------------------------*/
+  &__item:hover {
+    transform: scale(1.06);
+    z-index: 999;
+  }
+}
+
+

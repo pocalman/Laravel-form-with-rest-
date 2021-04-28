@@ -1,0 +1,75 @@
+/**
+  Properties
+  -> toutes les variables.
+**/
+$responsive-transitition-time: .5s;
+
+// colors
+$selection-color: inherit;
+
+$qfq: (
+  default: rgb(51, 51, 51),
+  primary: #ff4d55,
+  secondary: #919191,
+  third: #ff4d55,
+  background: white,
+  header-bg:#555
+);
+
+$colnum: (
+  default: white,
+  primary: #0b243a,
+  dark-blue: #0b243a,
+  secondary: white,
+  third: #1b4f7f,
+  blue: #1b4f7f,
+  blue-hue: rgb(43, 121, 193),
+  blue-faded: rgba(#1b4f7f, .7),
+  background: #103454,
+  header-bg: #555,
+  text-dark: #333,
+  text-gray: #555,
+  text-gray-faded: rgba(#555, .7),
+  green: #91d250
+);
+$llm-primary-bg: rgb(51, 51, 51);
+$llm-primary-text: white;
+$llm-secondary-bg: #67913D;
+$llm-secondary-text: white;
+$llm-warning-bg: red;
+
+$header-height: 48px;
+$header-height--mobile: 60px;
+$header-height--small-mobile: 50px;
+
+$selection-bg-color: rgba(0,0,0,0.1);
+
+// fonts
+$default-font: 'Rubik', arial, sans-serif;
+$header-font: 'Rubik', arial, sans-serif;
+$default-fontsize: 10px;
+$default-fontfamily: $default-font;
+
+// container
+$container-width: 1000px;
+$container-padding: 20px !default;
+
+// responsive
+$desktopWidth: 1050px !default;
+$tabletMax: 1024px !default;
+$mobileMax: 750px !default;
+$smallMobileMax: 413px !default;
+
+// grid
+$gutter-width: 20px;
+
+// theming
+@function color($theme-name, $key: "primary") {
+  @return map-get($theme-name, $key);
+}
+
+@mixin theme($theme-name) {
+	body.theme-#{$theme-name} & {
+		@content;
+	}
+}

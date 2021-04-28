@@ -1,0 +1,122 @@
+/*_   _   _
+ / \ / \ / \
+( B | E | M )
+ \_/ \_/ \_/
+ - Blocks................block properties only.
+ - Elems................elements' Block.
+ - Modifiers............modify the aspect of Element.
+ - States...............hover, focus, active or class for temporary state.
+*/
+.card {
+/*------------------------------------*\
+  #BLOCK
+\*------------------------------------*/
+    text-align: left;
+    border-radius: 5px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.075);
+    margin: 10px 0;
+    display: flex;
+    width: 100%;
+    @include theme(colnum) {
+        border-color: color($colnum, third);
+    }
+/*------------------------------------*\
+  #ELEMENTS
+\*------------------------------------*/
+    &__wrapper-link {
+        text-decoration: none;
+        color: color($qfq, primary);
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        overflow: hidden;
+        @include theme(colnum) {
+            color: color($colnum, primary);
+            background-color: color($colnum, blue);
+        }
+    }
+    &__image {
+        width: 100%;
+        height: 185px;
+        object-fit: cover;
+        text-align: center;
+        background-image: url(./../images/icon-image-solid.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 35% auto;
+        background-color: rgba(0, 0, 0, 0.22);
+    }
+    &__content {
+        padding: 30px $gutter-width;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    &__title {
+        color: color($qfq, third);
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 30px;
+        @include default-font;
+        @include theme(colnum) {
+            color: white;
+            @include header-font;
+            text-transform: none;
+        }
+    }
+    &__producer {
+        font-size: 15px;
+        line-height: 1.5;
+        padding-bottom: 20px;
+        flex-grow: 1;
+        @include theme(colnum) {
+            color: white;
+        }
+    }
+    &__state {
+        padding-bottom: 10px;
+    }
+/*------------------------------------*\
+  #MODIFIERS
+\*------------------------------------*/
+    &--featured {
+        border-radius: 0;
+        margin: 0;
+        @include theme(colnum) {
+            border-color: color($colnum, dark-blue);
+            border-width: 1px;
+            border-style: solid;
+        }
+    }
+    &--featured &__image {
+        height: 160px;
+        @include mobile {
+            height: 95px;
+        }
+    }
+    &--featured &__content {
+        padding: 10px;
+    }
+    &--featured &__title {
+        font-size: 15px;
+        margin-bottom: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+/*------------------------------------*\
+  #STATES
+\*------------------------------------*/
+
+    // Patches
+    .fa {
+        color: color($qfq, third);
+        margin-right: 5px;
+        @include theme(colnum) {
+            color: color($colnum, dark-blue);
+        }
+    }
+}

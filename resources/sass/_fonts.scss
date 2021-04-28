@@ -1,0 +1,33 @@
+// @import url('https://fonts.googleapis.com/css?family=Jost:wght@400;700;900');
+// @import url('https://fonts.googleapis.com/css?family=Rubik:wght@300,400,600,700');
+
+
+// $serif: 'Playfair Display', serif; // nom de la police SERIF
+// nom de la police SANS SERIF
+
+@mixin header-font() {
+  font-family: $header-font;
+  text-transform: uppercase;
+  text-rendering: geometricPrecision;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@mixin default-font() {
+  font-family: $default-font;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.text,
+.text--light {
+  color: color($colnum, text-dark);
+  margin-bottom: 3rem;
+}
+
+.text--dark {
+  color: color($colnum, default);
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,120 @@
+/*_   _   _
+ / \ / \ / \
+( B | E | M )
+ \_/ \_/ \_/
+ - Blocks................block properties only.
+ - Elems................elements' Block.
+ - Modifiers............modify the aspect of Element.
+ - States...............hover, focus, active or class for temporary state.
+*/
+.navigation {
+/*------------------------------------*\
+  #BLOCK
+\*------------------------------------*/
+    width: 100%;
+    background-color: white;
+    color: #000;
+    height: $header-height;
+    transition: height ease-in-out $responsive-transitition-time;
+    @include tablet {
+        height: $header-height--mobile;
+    }
+    @media (max-width: 400px) {
+        height: $header-height--small-mobile;
+    }
+
+    @include theme(colnum) {
+        background: color($colnum, header-bg);
+        color: white;
+    }
+    @include mobile {
+        position: fixed;
+        z-index: 999;
+    }
+
+/*------------------------------------*\
+  #ELEMENTS
+\*------------------------------------*/
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        @include tablet {
+            justify-content: space-between;
+        }
+    }
+    &__logo {
+        display: inline-block;
+        height: 100%;
+        width: 86px;
+        transition: height ease-in-out $responsive-transitition-time, width ease-in-out $responsive-transitition-time;
+        @include tablet {
+            width: 115px;
+        }
+        @include mobile {
+            width: 95px;
+        }
+    }
+    &__logo-link {
+        z-index: 999;
+        display: inline-block;
+        height: 100%;
+        width: auto;
+        padding: 6px 0;
+        transition: height ease-in-out $responsive-transitition-time, width ease-in-out $responsive-transitition-time, padding ease-in-out $responsive-transitition-time;
+
+        @include mobile {
+            padding: 5px 0;
+        }
+        @include tablet {
+            width: 115px;
+        }
+    }
+
+    &__menu-lists {
+        display: flex;
+    }
+    .menu__entry-link {
+        color: #555;
+        @include theme(colnum) {
+            color: $llm-primary-text;
+        }
+    }
+    &__ctas-wrapper {
+        margin-left: auto;
+        display: flex;
+        justify-content: flex-end;
+
+        @include mobile {
+            display: none;
+        }
+    }
+    &__cta {
+        color: white;
+        border-color: white;
+        margin: 0 $gutter-width/2;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        @include mobile {
+            display: block;
+            border-bottom: 1px solid #ccc;
+            padding: 15px 20px 15px 10px;
+            font-size: 21px;
+            text-decoration: none;
+            margin: 0px;
+        }
+    }
+
+/*------------------------------------*\
+  #MODIFIERS
+\*------------------------------------*/
+
+/*------------------------------------*\
+  #STATES
+\*------------------------------------*/
+}

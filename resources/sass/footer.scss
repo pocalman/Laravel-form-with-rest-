@@ -1,0 +1,59 @@
+/*_   _   _
+ / \ / \ / \
+( B | E | M )
+ \_/ \_/ \_/
+ - Blocks................block properties only.
+ - Elems................elements' Block.
+ - Modifiers............modify the aspect of Element.
+ - States...............hover, focus, active or class for temporary state.
+*/
+.footer {
+  /*------------------------------------*\
+  #BLOCK
+  \*------------------------------------*/
+  background-color: #261e1e;
+  padding: 30px 0;
+  font-size: 11px;
+  @include theme(colnum) {
+    background: url('http://www.lienmultimedia.com/squelettes/images/footer-border.png') no-repeat 0 top #232323;
+  }
+  /*------------------------------------*\
+  #ELEMENTS
+  \*------------------------------------*/
+  &__list-wrapper {
+    border-left: 2px solid #333;
+    padding: 0 10px;
+    margin-bottom: 2.5em;
+  }
+  &__list-title {
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include theme(colnum) {
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+  }
+  &__list {
+
+    li {
+      padding: 3px 0 2px 0;
+      line-height: 1.5;
+      a {
+        color: #ccc;
+        text-decoration: none;
+      }
+    }
+  }
+  &__copyright {
+    padding: 25px 0 0;
+    color: #666;
+  }
+  /*------------------------------------*\
+  #MODIFIERS
+  \*------------------------------------*/
+
+  /*------------------------------------*\
+  #STATES
+  \*------------------------------------*/
+}

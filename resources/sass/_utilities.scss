@@ -1,0 +1,159 @@
+/*
+Utilities
+	-> des utilities semantiques c'est mieux.
+	-> les utilities peuvent être utilisés en tant que mixins ou directement dans le markup html
+	-> https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
+	-> moi-meme : je pense qu'il est necessaire de créer une mixin seulement s'il y a plus que 1 seule déclaration.
+*/
+[debug],[class*="col-"] {
+	// outline: 2px dashed red;
+	[debug] {
+		outline-color: orange;
+	}
+}
+
+/*
+-------------------
+Textes
+-------------------
+*/
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.primary {
+	color: color($qfq, primary);
+}
+.reset {
+	text-decoration: none;
+	color: inherit;
+}
+
+/*
+-------------------
+Alignements et espacements
+-------------------
+*/
+.spacer {
+	height: 40px;
+}
+.spacer-bottom {
+	margin-bottom: 40px;
+}
+@mixin block-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+.block-center {
+	@include block-center();
+}
+
+/*
+-------------------
+Container
+-------------------
+*/
+@mixin container {
+	@include block-center();
+	max-width: $container-width;
+}
+.container {
+	@include container();
+	padding-left: $container-padding;
+	padding-right: $container-padding;
+	width: 100%;
+}
+
+// Custom utilities
+.mt-0 {
+	margin-top: 0 !important;
+}
+.mt-20 {
+	margin-top: 2rem;
+}
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+.pt-20 {
+	padding-top: 2rem;
+}
+.pb-20 {
+	padding-bottom: 2rem;
+}
+@for $i from 1 to 25 {
+	.px-#{$i} {
+		padding-left: $i*5px;
+		padding-right: $i*5px;
+	}
+}
+.tt-uc {
+	text-transform: uppercase;
+}
+.ta-j {
+	text-align: justify;
+}
+
+.translation {
+	font-size:.45em;
+	opacity: 0.75;
+	color: color($qfq, primary);
+	&--big {
+		font-size: 0.8em;
+	}
+}
+
+.table, table:not([class]) {
+	border: 1px solid #ddd;
+	width: 100%;
+	thead {
+		th {
+			padding: 5px;
+			font-weight: 900;
+		}
+	}
+	tr {
+	  &:nth-child(even) {
+		background-color: #eee;
+	  }
+	}
+		  td {
+			padding: 12px 20px;
+			border: 1px solid #ccc;
+			border-width: 1px 0;
+		  }
+	a {
+	  color: color($qfq, third);
+	  text-decoration: none;
+	  @include theme(colnum) {
+		color: color($colnum, third);
+		&:hover, &:active {
+			color: black;
+		}
+	  }
+	}
+  }
+
+.table--mini {
+	thead {
+		font-size: .9em;
+	}
+	tbody {
+		font-size: 0.9em;
+		}
+	td {
+		padding: 5px;
+	}
+}
+
+.warning {
+	color: white;
+	background-color: red !important;
+}

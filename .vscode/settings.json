@@ -1,0 +1,81 @@
+{
+  // Controls whether to use `.gitignore` and `.ignore` files when searching for files.
+  "search.useIgnoreFiles": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/public/**": true,
+    "**/vendor/**": true,
+    "**/node_modules/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/public/**": true,
+    "**/vendor/**" : true
+  },
+
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.showUnused":  true,
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.renderWhitespace": "all",
+    "editor.acceptSuggestionOnEnter": "off"
+  },
+  "php.validate.enable": true,
+
+  "javascript.format.enable": true,
+  "javascript.format.insertSpaceAfterCommaDelimiter": true,
+  "javascript.format.insertSpaceAfterConstructor": false,
+
+  // Defines space handling after function keyword for anonymous functions.
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+
+  // Defines space handling after keywords in a control flow statement.
+  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+
+  // Defines space handling after opening and before closing JSX expression braces.
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+
+  // Defines space handling after opening and before closing non-empty braces. Requires using TypeScript 2.3.0 or newer in the workspace.
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
+  // Defines space handling after opening and before closing non-empty brackets.
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+
+  // Defines space handling after opening and before closing non-empty parenthesis.
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+
+  // Defines space handling after opening and before closing template string braces.
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+
+  // Defines space handling after a semicolon in a for statement.
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+
+  // Defines space handling after a binary operator.
+  "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+
+  // Defines space handling before function argument parentheses.
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+
+  // Defines whether an open brace is put onto a new line for control blocks or not.
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+
+  // Defines whether an open brace is put onto a new line for functions or not.
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.format.semicolons": "insert",
+}

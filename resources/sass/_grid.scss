@@ -1,0 +1,157 @@
+// * Media Queries
+// * https://davidwalsh.name/write-media-queries-sass
+@mixin tablet {
+	@media (max-width: #{$tabletMax}) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media (max-width: #{$mobileMax}) {
+		@content;
+	}
+}
+@mixin small-mobile {
+	@media (max-width: #{$smallMobileMax}) {
+		@content;
+	}
+}
+
+/*
+Grid
+-> systeme de grille fait maison
+*/
+
+.row--gutter {
+	margin-left: -$gutter-width/2;
+	margin-right: -$gutter-width/2;
+}
+
+.row--center {
+	align-items: center;
+}
+
+[class*='col-'] {
+	position: relative;
+	// display: flex; // experimental
+}
+
+.row {
+	// position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+// col-*
+@for $i from 1 to 13 {
+	.col-#{$i} {
+		width: 100%/12*$i;
+	}
+	.row--gutter .col-#{$i} {
+		width: calc( 100%/12*#{$i} - #{$gutter-width} );
+		margin-left: $gutter-width/2;
+		margin-right: $gutter-width/2;
+	}
+}
+@include tablet {
+	@for $i from 1 to 13 {
+		.col-md-#{$i} {
+			width: 100%/12*$i;
+		}
+		.row--gutter .col-md-#{$i} {
+			width: calc( 100%/12*#{$i} - #{$gutter-width} );
+			margin-left: $gutter-width/2;
+			margin-right: $gutter-width/2;
+		}
+	}
+}
+@include mobile {
+	@for $i from 1 to 13 {
+		.col-sm-#{$i} {
+			width: 100%/12*$i;
+		}
+		.row--gutter .col-sm-#{$i} {
+			width: calc( 100%/12*#{$i} - #{$gutter-width} );
+			margin-left: $gutter-width/2;
+			margin-right: $gutter-width/2;
+		}
+	}
+}
+@include small-mobile {
+	@for $i from 1 to 13 {
+		.col-xs-#{$i} {
+			width: 100%/12*$i;
+		}
+		.row--gutter .col-xs-#{$i} {
+			width: calc( 100%/12*#{$i} - #{$gutter-width} );
+			margin-left: $gutter-width/2;
+			margin-right: $gutter-width/2;
+		}
+	}
+}
+
+/*
+-------------------
+Responsive (RWD)
+-------------------
+2018-04-19
+-> les mixins peuvent être réutilisées directement dans les classes semantiques de composents BEM.
+-> exemple d'utilisation : Desktop only : .sm-md-hidden | Desktop hidden : .sm-md-only
+*/
+// mixins
+@mixin sm-only {
+	display: none;
+	@include mobile {
+		display: block;
+	}
+}
+@mixin sm-hidden {
+	@include mobile {
+		display: none;
+	}
+}
+@mixin md-only {
+	@include mobile {
+			display: none;
+		}
+		@include tablet {
+			// display: block;
+		}
+}
+@mixin md-hidden {
+	@include tablet {
+		display: none;
+	}
+}
+@mixin md-up-hidden {
+	@include mobile {
+		display: none;
+	}
+}
+@mixin md-down-hidden {
+	@include mobile {
+		display: none;
+	}
+	@include tablet {
+		display: none;
+	}
+}
+
+// responsive utilities
+.md-only {
+	@include md-only();
+}
+.md-hidden {
+	@include md-hidden();
+}
+.md-up-hidden {
+	@include md-up-hidden();
+}
+.md-down-hidden {
+	@include md-down-hidden();
+}
+.sm-only {
+	@include sm-only();
+}
+.sm-hidden {
+	@include sm-hidden();
+}
